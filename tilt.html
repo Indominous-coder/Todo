@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tilting</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: no-repeat linear-gradient(135deg, orangered, blue);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 2rem;
+            height: 15rem;
+            width: 15.5rem;
+            background: linear-gradient(135deg, red, blue);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="card">
+            Hey There!
+        </div>
+    </main>
+    
+
+<script type="text/javascript" src="/vanilla-tilt.js">
+
+</script>
+    <script>
+      VanillaTilt.init(document.querySelector(".card"), {
+            max: 50,
+            speed: 900,
+            glare: true,
+            "max-glare": 1
+        });
+    </script>
+</body>
+
+</html>

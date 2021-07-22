@@ -1,0 +1,314 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+}
+img {
+  position: fixed;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+.todo-cont {
+  font-family: serif;
+  font-size: 1.9rem;
+  color: rgba(246, 246, 246, 0.966);
+  width: 15vw;
+  height: 8vh;
+  z-index: 9;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 2px 2px 15px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 0.5s linear;
+  animation: todo 0.5s linear 1s;
+}
+.todo-cont:hover {
+  cursor: pointer;
+}
+.color {
+  text-decoration: none;
+  color: white;
+}
+.todo-cont:focus-within {
+  overflow: hidden;
+  margin-top: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  height: 68.5vh;
+  width: 34.5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  border: none;
+  outline: none;
+  cursor: unset;
+}
+.greet:focus-within .p {
+  transition: all 100ms linear;
+}
+.todo-cont:focus-within .greet {
+  font-size: 3rem;
+  color: rgba(241, 241, 241, 0.856);
+}
+.greet {
+  transition: all 100ms linear;
+  margin: 0.5rem auto;
+}
+.todo-cont:focus-within .p {
+  font-size: 2.5rem;
+  display: block;
+  margin: 1.75rem auto;
+}
+.todo-cont:focus-within .a {
+  font-size: 2.5rem;
+}
+.p {
+  display: none;
+  text-align: center;
+}
+.greet {
+  text-align: center;
+}
+.btn1 {
+  margin: auto;
+  position: relative;
+  top: 67%;
+  left: 41.75%;
+  height: 50px;
+  width: 15vw;
+  font-size: 1.5rem;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+}
+.a {
+  display: none;
+  width: 10vw;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 252, 253, 0.2);
+  color: rgba(255, 255, 255, 0.966);
+  position: relative;
+  top: 4%;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: width 0.5s ease;
+}
+.a:hover {
+  width: 20vw;
+}
+.a:focus {
+  display: none;
+}
+.a::before {
+  content: "";
+  display: inline-block;
+  background: rgba(255, 211, 255, 0.3);
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  height: 100%;
+  transition: width 0.5s ease;
+  border-radius: 20px;
+}
+.a:hover::before {
+  width: 20vw;
+  height: 100%;
+  background: rgba(243, 211, 253, 0.287);
+}
+.a::after {
+  content: "";
+  display: block;
+  background: rgba(255, 211, 255, 0.4);
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  width: 0%;
+  height: 100%;
+  transition: width 0.5s ease;
+  border-radius: 20px;
+}
+.a:hover::after {
+  width: 20vw;
+  height: 100%;
+  background: rgba(243, 211, 253, 0.287);
+}
+.todo {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 1;
+  height: 68.5vh;
+  width: 34vw;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur( 12.0px );
+  -webkit-backdrop-filter: blur( 20.0px );  
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 2s linear;
+}
+.input-field {
+  position: absolute;
+  left: 1.5rem;
+  top: 4%;
+}
+input {
+  height: 2.5rem;
+  width: 22rem;
+  text-align: justify;
+  font-size: 1.4rem;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background:rgba(255, 252, 253,0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: rgba(246, 246, 246, 0.84);
+  margin-right: 7px;
+  padding: 0 7px 0 7px;
+
+}
+input:focus {
+  border: 0.25px solid rgba(255, 255, 255, 0.1);
+  font-family: Arial;
+}
+input:focus .head-para {
+  opacity: 0;
+}
+.btn-plus {
+  height: 2.1rem;
+  position: relative;
+  top: 1.7px;
+  padding: 5px;
+  outline: none;
+  border: none;
+  border-radius: 7px;
+  background: rgba(255, 252, 253, 0.2);
+  backdrop-filter: blur(10.0px);
+  -webkit-backdrop-filter: brightness(20.0px);
+}
+
+.fa-plus {
+  padding: 1px 2px 2px 2px;
+  background-size: 10px;
+  color:  rgba(255, 255, 255, 0.5);
+  font-size: 22px;
+}
+.fa-plus:hover {
+  color:  rgba(255, 255, 255, 0.65);
+}
+.head-para {
+  text-align: left;
+  color: rgba(255, 228, 255, 0.45);
+  position: absolute;
+  left: 32.95%;
+  top: 6.15%;
+  font-size: 4rem;
+  font-family: serif;
+  opacity: 0;
+  transition: all 2s linear;
+}
+
+.para-styling {
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 10px;
+  width: 23.99em;
+  background: rgba(255, 255, 255, 0.2);
+
+}
+.para-styling1 {
+  margin-bottom: 10px;
+  display: inline;
+  margin-left: 14px;
+  cursor:pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  overflow-x: auto;
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(246, 246, 246, 0.8);
+  padding: 7px 7px 7px 7px;
+  border-radius: 9px;
+  width: 23.75rem;
+}
+.toggle {
+  text-decoration:line-through;
+}
+.ul {
+  opacity: 0;
+  float: right;
+  transition: all 300ms linear;
+  margin-left: 10px;
+  list-style: none;
+  transition: all 100ms linear;
+}
+.fa-trash {
+  padding-right: 7px;
+  color: rgba(239, 204, 255, 0.8);
+  font-size: 25px; 
+}
+.storage {      
+  margin-top: 1rem;     
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  height: 80%;
+  overflow: auto;
+}
+/* .todo-cont1 .head {
+  position: absolute;
+  font-size: 3rem;
+  color: rgba(241, 241, 241, 0.856);
+}
+.head {
+  position: relative;
+  left: 25%;
+}
+.p {
+  position: relative;
+  text-align: center;
+  font-size: 2.5rem;
+  display: block;
+  margin-top: 2rem;
+} */
+/* .block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.856);
+  position: relative;
+  height: 4rem;
+  width: 100%;
+  font-size: 1.9rem;
+  text-transform: capitalize;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 5px 5px 15px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(7.5px);
+  border-radius: 3px;
+  border: none;
+  transition: all 500ms ease-out;
+}
+.block:hover {
+  height: 100%;
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding-top: 5px;
+} */
